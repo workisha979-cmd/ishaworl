@@ -1,16 +1,17 @@
 let draggedTask = null;
 
-// Add new task
 function addTask(status) {
-  const text = prompt("Enter task:");
+  const input = document.getElementById(`${status}-input`);
+  const text = input.value.trim();
   if (!text) return;
 
-  const task = createTaskElement(text);
+  const task = createTask(text);
   document.querySelector(`[data-status="${status}"]`).appendChild(task);
+
+  input.value = "";
 }
 
-// Create task element
-function createTaskElement(text) {
+function createTask(text) {
   const div = document.createElement("div");
   div.className = "task";
   div.textContent = text;
@@ -23,11 +24,8 @@ function createTaskElement(text) {
   return div;
 }
 
-// Enable dropping
 document.querySelectorAll(".task-list").forEach(list => {
-  list.addEventListener("dragover", e => {
-    e.preventDefault();
-  });
+  list.addEventListener("dragover", e => e.preventDefault());
 
   list.addEventListener("drop", () => {
     if (draggedTask) {
