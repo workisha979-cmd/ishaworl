@@ -3,31 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Kanban Board</title>
+  <title>Modern Kanban Board</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <h1>Kanban Board</h1>
+  <h1>🚀 My Kanban Board</h1>
 
   <div class="board">
-    <div class="column" id="todo">
+
+    <div class="column">
       <h2>To Do</h2>
       <div class="task-list" data-status="todo"></div>
-      <button onclick="addTask('todo')">+ Add Task</button>
+      <div class="add-task">
+        <input type="text" placeholder="New task..." id="todo-input"/>
+        <button onclick="addTask('todo')">Add</button>
+      </div>
     </div>
 
-    <div class="column" id="inprogress">
+    <div class="column">
       <h2>In Progress</h2>
       <div class="task-list" data-status="inprogress"></div>
-      <button onclick="addTask('inprogress')">+ Add Task</button>
+      <div class="add-task">
+        <input type="text" placeholder="New task..." id="inprogress-input"/>
+        <button onclick="addTask('inprogress')">Add</button>
+      </div>
     </div>
 
-    <div class="column" id="done">
+    <div class="column">
       <h2>Done</h2>
       <div class="task-list" data-status="done"></div>
-      <button onclick="addTask('done')">+ Add Task</button>
+      <div class="add-task">
+        <input type="text" placeholder="New task..." id="done-input"/>
+        <button onclick="addTask('done')">Add</button>
+      </div>
     </div>
+
   </div>
 
   <script src="script.js"></script>
